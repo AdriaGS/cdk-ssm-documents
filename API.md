@@ -14051,6 +14051,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.CommandStep">CommandStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStep.property.applications">applications</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStep.property.awsComponents">awsComponents</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStep.property.billingInfo">billingInfo</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStep.property.customInventory">customInventory</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStep.property.files">files</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStep.property.instanceDetailedInformation">instanceDetailedInformation</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -14218,6 +14219,16 @@ public readonly applications: IStringVariable;
 
 ```typescript
 public readonly awsComponents: IStringVariable;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `billingInfo`<sup>Optional</sup> <a name="billingInfo" id="@cdklabs/cdk-ssm-documents.SoftwareInventoryStep.property.billingInfo"></a>
+
+```typescript
+public readonly billingInfo: IStringVariable;
 ```
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
@@ -28009,6 +28020,7 @@ const softwareInventoryStepProps: SoftwareInventoryStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStepProps.property.precondition">precondition</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Precondition">Precondition</a></code> | (Optional) A precondition to test before execution occurrs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStepProps.property.applications">applications</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) Collect metadata for installed applications. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStepProps.property.awsComponents">awsComponents</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) Collect metadata for AWS components like amazon-ssm-agent. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStepProps.property.billingInfo">billingInfo</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) Collect billing info for license included applications. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStepProps.property.customInventory">customInventory</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) Collect custom inventory data. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStepProps.property.files">files</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional, requires SSM Agent version 2.2.64.0 or later) Collect metadata for files, including file names, the time files were created, the time files were last modified and accessed, and file sizes, to name a few. For more information about collecting file inventory, see Working with file and Windows registry. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStepProps.property.instanceDetailedInformation">instanceDetailedInformation</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) Collect more instance information than is provided by the default inventory plugin (aws:instanceInformation), including CPU model, speed, and the number of cores, to name a few. |
@@ -28174,6 +28186,18 @@ public readonly awsComponents: IStringVariable;
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 (Optional) Collect metadata for AWS components like amazon-ssm-agent.
+
+---
+
+##### `billingInfo`<sup>Optional</sup> <a name="billingInfo" id="@cdklabs/cdk-ssm-documents.SoftwareInventoryStepProps.property.billingInfo"></a>
+
+```typescript
+public readonly billingInfo: IStringVariable;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+(Optional) Collect billing info for license included applications.
 
 ---
 

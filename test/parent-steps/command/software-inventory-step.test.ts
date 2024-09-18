@@ -20,6 +20,7 @@ describe('SoftwareInventoryStep', function() {
         windowsRegistry: new HardCodedString('windowsRegistry'),
         windowsRoles: new HardCodedString('windowsRoles'),
         customInventory: new HardCodedString('customInventory'),
+        billingInfo: new HardCodedString('billingInfo'),
       });
 
       assert.deepEqual(JSON.parse(JSON.stringify(step.toSsmEntry())), {
@@ -35,6 +36,7 @@ describe('SoftwareInventoryStep', function() {
           windowsRegistry: 'windowsRegistry',
           windowsRoles: 'windowsRoles',
           customInventory: 'customInventory',
+          billingInfo: 'billingInfo',
         },
         name: 'SoftwareInventoryTest',
       });

@@ -65,6 +65,11 @@ export interface SoftwareInventoryStepProps extends CommandStepProps {
      */
   readonly customInventory?: IStringVariable;
 
+  /**
+   * (Optional) Collect billing info for license included applications.
+   */
+  readonly billingInfo?: IStringVariable;
+
 }
 
 /**
@@ -83,6 +88,7 @@ export class SoftwareInventoryStep extends CommandStep {
   readonly windowsRegistry?: IStringVariable;
   readonly windowsRoles?: IStringVariable;
   readonly customInventory?: IStringVariable;
+  readonly billingInfo?: IStringVariable;
 
   readonly platforms = [Platform.WINDOWS, Platform.LINUX, Platform.MAC_OS];
   readonly action = 'aws:softwareInventory';
@@ -99,6 +105,7 @@ export class SoftwareInventoryStep extends CommandStep {
     this.windowsRegistry = props.windowsRegistry;
     this.windowsRoles = props.windowsRoles;
     this.customInventory = props.customInventory;
+    this.billingInfo = props.billingInfo;
   }
 
   /**
@@ -116,6 +123,7 @@ export class SoftwareInventoryStep extends CommandStep {
       this.windowsRegistry,
       this.windowsRoles,
       this.customInventory,
+      this.billingInfo,
     ];
     return inputs.flatMap(i => i?.requiredInputs() ?? []);
   }
@@ -151,6 +159,9 @@ export class SoftwareInventoryStep extends CommandStep {
     }
     if (this.customInventory != undefined) {
       inputs.customInventory = this.customInventory;
+    }
+    if (this.billingInfo != undefined) {
+      inputs.billingInfo = this.billingInfo;
     }
     return super.prepareSsmEntry(inputs);
   }
